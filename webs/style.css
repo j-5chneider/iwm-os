@@ -56,12 +56,14 @@ a:active {
   font-size: .7em;
 }
 
+/*
 .fullscreen {
   background-image: url("modelle_tab.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center; 
 }
+*/
 
 .container {
     justify-content: center;
