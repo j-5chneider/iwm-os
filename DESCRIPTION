@@ -1,15 +1,15 @@
 Type: Compendium
 Package: iwm OS workshop
-Title: What the Package Does (One Line, Title Case)
+Title: Files of OS Workshop
 Version: 0.0.1
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Juergen",
+           family = "Schneider",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+           email = "juergen.schneider@uni-tuebingen.de",
+           comment = c(ORCID = "0000-0002-3772-4198"))
 Description: files of workshop
-License: What license it uses
+License: CC-BY 4.0
 Depends: 
     knitr,
     rmarkdown,
