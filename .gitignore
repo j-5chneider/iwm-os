@@ -34,3 +34,6 @@ vignettes/*.pdf
 
 # Shiny token, see https://shiny.rstudio.com/articles/shinyapps.html
 rsconnect/
+iwm OS workshop.Rcheck/
+iwm OS workshop*.tar.gz
+iwm OS workshop*.tgz
