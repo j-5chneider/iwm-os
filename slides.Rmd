@@ -1,0 +1,60 @@
+---
+title: "Überzeugungen Lehramtsstudierender"
+subtitle: "zum Verhältnis von Theorie und Praxis 'ÜzVvTP-LAS' "
+author: 
+  - Jürgen Schneider
+date: "`r format(Sys.Date(), '%d %b %Y')`"
+output:
+  ioslides_presentation:
+    widescreen: true
+    smaller: true
+    logo: webs/logo.gif
+    css:  webs/style.css
+bibliography: webs/references.bib
+---
+
+<style>
+slides > slide:not(.nobackground):after {
+  content: '';
+}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(shiny)
+```
+
+
+# Theoretischer Hintergrund
+
+## Lehrerbildung | Passung Angebot & Überzeugung
+
+<span class="mysource">[@Thon.2014]</span>  
+`r icon(name = "thumbs-down", lib = "font-awesome")` 
+
+<div class="myfooter">
+  Folien: ![](webs/osf0.png) [osf.io/g8v7b](https://osf.io/g8v7b/)
+</div>
+
+
+<div class="notes">
+
+</div>
+
+
+
+
+
+# Vielen Dank | für die Aufmerksamkeit
+
+__Jürgen Schneider__  
+juergen.schneider@uni-tuebingen.de  
+07071-29 76088  
+[ORCID](https://orcid.org/0000-0002-3772-4198)
+
+# Pictures
+h | h
+
+
+#
+
