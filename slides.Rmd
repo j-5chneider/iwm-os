@@ -1,6 +1,6 @@
 ---
-title: "Überzeugungen Lehramtsstudierender"
-subtitle: "zum Verhältnis von Theorie und Praxis 'ÜzVvTP-LAS' "
+title: ""
+subtitle: "what, why & some applications"
 author: 
   - Jürgen Schneider
 date: "`r format(Sys.Date(), '%d %b %Y')`"
@@ -53,7 +53,7 @@ juergen.schneider@uni-tuebingen.de
 [ORCID](https://orcid.org/0000-0002-3772-4198)
 
 # Pictures
-h | h
+__title page__ | [Finn Hackshaw](https://unsplash.com/@finnhackshaw) on [Unsplash](https://unsplash.com)
 
 
 #
