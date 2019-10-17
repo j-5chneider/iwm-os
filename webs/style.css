@@ -82,6 +82,46 @@ a:active {
     text-align: center;
 }
 
+.box45l {
+  width: 45%;
+  margin-right: 20px;
+}
+
+.box45r1 {
+  position: absolute;
+  left: 50%;
+  top:0;
+  width: 50%;
+  height: 100%;
+  background-image: url("light.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.box45r2 {
+  position: absolute;
+  left: 43%;
+  top:25%;
+  width: 56%;
+  height: 80%;
+  background-image: url("silberz.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+
+.box100cb {
+  width: 100%;
+  height:70vh;
+  border: solid red 1px;
+  background-image: url("cb.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+
 /*
 slides > slide.backdrop {
   background: white;

@@ -25,21 +25,112 @@ library(shiny)
 ```
 
 
-# Theoretischer Hintergrund
+# A (typical?) story | of a young researcher
 
-## Lehrerbildung | Passung Angebot & Überzeugung
+<div class="notes">
+JURE (Junior Researchers of EARLI):
+"shaping your research career"
+my naive assumption: where and how to get best training to become an outstanding researcher
 
-<span class="mysource">[@Thon.2014]</span>  
-`r icon(name = "thumbs-down", lib = "font-awesome")` 
+* publish (or perish) as much as possible in high ranked journals
+* get grants
+
+</div>
+
+
+## Incentive structures | in scholarly communication
+
+
+<div class="box45l" style="margin-top:10%">
+`r icon(name = "star", lib = "font-awesome")` novelty  
+  
+`r icon(name = "thumbs-up", lib = "font-awesome")` positive results
+  
+  
+  <span class="mysource">[@Nosek.2012]</span>  
+</div>
+
+<div class="box45r1">
+</div>
+
+
+## Degrees of freedom | in the research process
+
+
+<div class="box45l">
+
+* multitude of decisions to be made
+
+</div>
+
+
+## Degrees of freedom | in the research process
+
+
+<div class="box45l">
+
+* multitude of decisions to be made
+
+\
+
+`Are football (soccer) referees more likely to give red cards to players with dark skin than to players with light skin?`
+
+* 29 research teams
+* same data set
+* same results?
+
+<span class="mysource">[@Silberzahn.2015]</span>
+
+</div>
+
+## Degrees of freedom | in the research process
+
+
+<div class="box45l">
+
+* multitude of decisions to be made
+
+\
+
+`Are football (soccer) referees more likely to give red cards to players with dark skin than to players with light skin?`
+
+* 29 research teams
+* same data set
+* same results?
+
+<span class="mysource">[@Silberzahn.2015]</span>
+
+</div>
+
+<div class="box45r2">
+
+</div>
+
+<div class="notes">
+
+* clustered standard errors or multilevel?
+* which cases to seleect / deselect?
+* Bayesian Modelling?
+* Likert Scales as ordinal or interval?
+* which covariates should be taken into account?
+
+</div>
+
+
+## Nobody's perfect - cognitive biases
+
+<object data="webs/cb.svg" type="image/svg+xml" width="75%">
+</object>
+
+
+## tmp
 
 <div class="myfooter">
   Folien: ![](webs/osf0.png) [osf.io/g8v7b](https://osf.io/g8v7b/)
 </div>
 
 
-<div class="notes">
 
-</div>
 
 
 
@@ -48,12 +139,17 @@ library(shiny)
 # Vielen Dank | für die Aufmerksamkeit
 
 __Jürgen Schneider__  
+  
 juergen.schneider@uni-tuebingen.de  
 07071-29 76088  
-[ORCID](https://orcid.org/0000-0002-3772-4198)
+[ORCID: 0000-0002-3772-4198](https://orcid.org/0000-0002-3772-4198)
 
 # Pictures
-__title page__ | [Finn Hackshaw](https://unsplash.com/@finnhackshaw) on [Unsplash](https://unsplash.com)
+
+All taken from 
+__title page__ | [Finn Hackshaw](https://unsplash.com/@finnhackshaw) on [Unsplash](https://unsplash.com)  
+__light bulbs__ | [Dragos Gontariu](https://unsplash.com/@dragos126) on [Unsplash](https://unsplash.com)  
+__biases__ |  <a href="https://commons.wikimedia.org/wiki/User:Jm3">John Manoogian III</a> categories and descriptions: Buster Benson implementation: <a href="https://commons.wikimedia.org/wiki/User:TilmannR">TilmannR</a>, <a href="https://commons.wikimedia.org/wiki/File:Cognitive_bias_codex_en.svg">Cognitive bias codex en</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" rel="license">CC BY-SA 4.0</a> 
 
 
 #
