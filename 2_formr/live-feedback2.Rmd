@@ -1,0 +1,123 @@
+---
+title: "Live Feedback"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(formr)
+library(lubridate)
+library(shinyTime)
+formr_connect(email = 'juergen.schneider@uni-tuebingen.de', password = '123secure' )    # PASSWORD ONLY TEMPORARY
+data_raw <- formr_raw_results(survey_name = 'UzVvTP_LAS_II')
+
+data_p <- data_raw %>%
+    mutate(Transfer_st = base::rowMeans(data.frame(tfe_1_st, tfe_2_st, tfe_3_st, tfe_4_st, tfe_5_st), na.rm = T),
+           Selektion_st = rowMeans(data.frame(sel_1_st, sel_2_st, sel_3_st, sel_4_st, sel_5_st), na.rm = T),
+           Enrichment_st = rowMeans(data.frame(enr_1_st, enr_2_st, enr_3_st, enr_4_st, enr_5_st), na.rm = T),
+           Relationierung_st = rowMeans(data.frame(rel_1_st, rel_2_st, rel_3_st, rel_4_st), na.rm = T),
+           Transfer_sr = rowMeans(data.frame(tfe_1_sr, tfe_2_sr, tfe_3_sr, tfe_4_sr, tfe_5_sr), na.rm = T),
+           Selektion_sr = rowMeans(data.frame(sel_1_sr, sel_2_sr, sel_3_sr, sel_4_sr, sel_5_sr), na.rm = T),
+           Enrichment_sr = rowMeans(data.frame(enr_1_sr, enr_2_sr, enr_3_sr, enr_4_sr, enr_5_sr), na.rm = T),
+           Relationierung_sr = rowMeans(data.frame(rel_1_sr, rel_2_sr, rel_3_sr, rel_4_sr), na.rm = T),
+           created = ymd_hms(created)) %>%
+        select(Transfer_st:Relationierung_sr, created) %>%
+    gather(key = "variable", value = "value", 1:8) %>%
+    mutate(Theorie = ifelse(str_sub(variable, start = -2, end = -1) == "st", "CTML", "STP"),
+           variable = str_sub(variable, start = 1, end = -4))
+```
+
+Column {.sidebar}
+-----------------------------------------------------------------------
+
+### Input
+
+```{r }
+checkboxInput("jitter", "Punktewolke", FALSE)
+checkboxInput("treat", "Theorien getrennt", FALSE)
+# checkboxInput("boxp", "Boxplot", FALSE)
+sliderInput("myad", strong("Smoothing"), 0.1, 2, 1.5, 0.1, ticks = F)
+hr()
+
+wellPanel(
+dateInput('date1',
+      label = strong('Nur Daten von...'),
+      value = ymd("2019-05-17"),
+      format = "dd-mm-yyyy",
+      weekstart = 1,
+      language = "de"
+    ),
+sliderInput("time1", label = "", 0, 23, 14, 1, post = "Uhr", ticks = F),
+dateInput('date2',
+      label = strong('bis...'),
+      value = Sys.Date(),
+      format = "dd-mm-yyyy",
+      weekstart = 1,
+      language = "de"
+    ),
+sliderInput("time2", label = "", 0, 23, 23, 1, post = "Uhr", ticks = F),
+hr(),
+renderText(paste("n= ", teinl(), "TN"))
+)
+
+```
+
+Column {.tabset}
+-----------------------------------------------------------------------
+
+### Link
+
+<span style="font-size:5em; font-weight:bold">tpv2.formr.org</span>
+
+### Output
+
+```{r}
+
+source("R_rainclouds.R")
+
+data_p_r <- reactive({
+  data_p %>% dplyr::filter(created >= ymd_h(paste(input$date1, sprintf("%02d", input$time1))) & created <= ymd_h(paste(input$date2, sprintf("%02d", input$time2))))
+})
+
+teinl <- reactive({
+  data_raw %>% dplyr::filter((ymd_hms(created) >= ymd_h(paste(input$date1, sprintf("%02d", input$time1))) & ymd_hms(created) <= ymd_h(paste(input$date2, sprintf("%02d", input$time2)))) & !is.na(lehramt)) %>% nrow() # Zeit ist noch um 2h nach vorne verschoben??
+})
+
+renderPlot({
+    if(input$treat == F){
+        p <- ggplot(data_p_r(), aes(x=variable, y = value, fill = variable)) +
+                geom_flat_violin(position = position_nudge(x = .1, y = 0), adjust = input$myad, trim = FALSE, alpha = .5, colour = NA) + 
+                geom_boxplot(outlier.shape = NA, alpha = .5, width = .1, colour = "black")+
+                theme(legend.position = "none") +
+                scale_colour_brewer(palette = "Dark2")+
+                scale_fill_brewer(palette = "Dark2")
+    }
+    
+    if(input$treat == T){
+        p <- ggplot(data_p_r(), aes(x=variable, y = value, fill = Theorie)) +
+                geom_flat_violin(position = position_nudge(x = .1, y = 0), adjust = input$myad, trim = FALSE, alpha = .5, colour = NA) + 
+                geom_boxplot(outlier.shape = NA, alpha = .5, width = .1, colour = "black") +
+                scale_colour_brewer(palette = "Dark2")+
+                scale_fill_brewer(palette = "Dark2")
+    }
+    
+
+    if(input$jitter == T){
+        p <- p + geom_jitter(height = .05, width = .2, shape = 1, )
+    }
+    
+    p + scale_y_continuous(limits = c(1,6), breaks = c(1,2,3,4,5,6), minor_breaks = NULL) + 
+        theme_light() + 
+        theme(axis.title.x = element_blank()) +
+        ylab("Zustimmung")
+    
+    
+    
+
+})
+```

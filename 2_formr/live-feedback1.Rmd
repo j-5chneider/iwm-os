@@ -1,0 +1,59 @@
+---
+title: "Live Feedback"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(formr)
+
+# CONNECTING TO FORMR
+formr_connect(email = 'juergen.schneider@uni-tuebingen.de', password = '123secure' ) # DON'T WORRY IT'S A TEMPORARY PASSWORD
+data_raw <- formr_raw_results(survey_name = 'tmp_1')   # FILL IN YOUR SURVEY NAME HERE
+
+# BUILDING SCALES OUT OF THE ITEMS
+data_p <- data_raw %>%
+    mutate(preference = rowMeans(data.frame(rating_button, rating_button2), na.rm=T),
+           tough = rowMeans(data.frame(tough1, tough2), na.rm=T))
+```
+
+Column {.sidebar}
+-----------------------------------------------------------------------
+
+### Input
+
+```{r }
+wellPanel(
+  selectInput("whichvar", "Choose Variable",
+      list(`Toughness` = "tough",
+           `Preference` = "preference")
+    )
+)
+```
+
+Column
+-----------------------------------------------------------------------
+
+### Output
+
+```{r}
+
+data_p_r <- reactive({data_p})
+
+renderPlot({
+    # PULLING THE INPUT VARIABLE FROM DROPDOWN MENU AS BEING ON THE X-AXIS
+    p <- ggplot(data_p_r(), aes(x=as.factor(data_p_r()[,paste(input$whichvar)]))) + geom_bar() 
+
+    # SOME DESIGN ALTERNATIONS
+    p + theme_light() + 
+        scale_x_discrete(breaks = c("1", "2", "3", "4", "5"), limits = c("1", "2", "3", "4", "5"), drop = F) +
+        theme(axis.title.x = element_blank()) +
+        ylab("count")
+    
+})
+```

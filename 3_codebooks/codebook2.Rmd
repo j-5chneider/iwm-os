@@ -1,0 +1,13 @@
+---
+title: "BilWiss Skalendoku"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Link zur Skalendoku gibt's [HIER](https://www.iqb.hu-berlin.de/fdz/studies/BilWiss/BilWiss_Skalenha.pdf)
+
+Schauen Sie sich z.B. die Skalen `4.4.1 Allgemeine Selbstwirksamkeit` auf Seite 93 an.
