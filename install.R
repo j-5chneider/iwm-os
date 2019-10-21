@@ -1,2 +1,7 @@
 install.packages("shiny")
 install.packages("knitr")
+install.packages("flexdashboard")
+install.packages("formr")
+install.packages("shinyTime")
+install.packages("pander")
+install.packages("codebook")
