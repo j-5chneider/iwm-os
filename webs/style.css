@@ -1,3 +1,7 @@
+slides > slide:not(.nobackground):after {
+  content: '';
+}
+
 .title-slide {
   background-image: url("title_bg.jpg");
   background-size: cover;
@@ -183,6 +187,32 @@ a:active {
   text-align: center;
   font-weight: 900;
   color: white;
+}
+
+.box45r7 {
+  position: absolute;
+  left: 50%;
+  top:0;
+  width: 50%;
+  height: 100%;
+  background-image: url("sign.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+  opacity:.5;
+}
+
+.box45r8 {
+  position: absolute;
+  left: 50%;
+  top:0;
+  width: 50%;
+  height: 100%;
+  background-image: url("trello.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+  opacity:.5;
 }
 
 .box45l1 {
