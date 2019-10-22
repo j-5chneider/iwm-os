@@ -1,18 +1,38 @@
 Type: Compendium
 Package: iwm OS workshop
-Title: Files of OS Workshop
+Title: What the Package Does (One Line, Title Case)
 Version: 0.0.1
 Authors@R: 
-    person(given = "Juergen",
-           family = "Schneider",
-           role = c("aut", "cre"),
-           email = "juergen.schneider@uni-tuebingen.de",
-           comment = c(ORCID = "0000-0002-3772-4198"))
+  person(given = "Juergen",
+         family = "Schneider",
+         role = c("aut", "cre"),
+         email = "juergen.schneider@uni-tuebingen.de",
+         comment = c(ORCID = "0000-0002-3772-4198"))
 Description: files of workshop
 License: CC-BY 4.0
 Depends: 
+    base,
+    codebook,
+    devtools,
+    dplyr,
+    flexdashboard,
+    foreign,
+    formr,
+    ggplot2,
     knitr,
+    lubridate,
+    osfr,
+    pander,
+    plyr,
+    psych,
+    rio,
     rmarkdown,
-    shiny
+    shiny,
+    shinyTime,
+    tidyr,
+    tidyverse
+Remotes: 
+    centerforopenscience/osfr,
+    rubenarslan/formr
 Encoding: UTF-8
 LazyData: true
