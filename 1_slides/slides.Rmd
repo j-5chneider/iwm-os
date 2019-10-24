@@ -24,6 +24,10 @@ knitr::opts_chunk$set(echo = FALSE)
 library(shiny)
 ```
 
+<div class="notes">
+test
+</div>
+
 
 # A (typical?) story | of a young researcher
 
@@ -35,6 +39,8 @@ my naive assumption: where and how to get best training to become an outstanding
 * publish (or perish) as much as possible in high ranked journals
 * get grants
 
+What's good for the scientist vs. what's good for science  
+Erwartungen an Sie?
 </div>
 
 <div class="myfooter">
@@ -137,6 +143,15 @@ my naive assumption: where and how to get best training to become an outstanding
 </div>
 
 ## Nobody's perfect - cognitive biases
+
+<div class="notes">
+
+Prof. Dr. Dr. hc. mult. Niels Birbaumer  
+Dr. Martin Spüler  
+"Birbaumer selbst wies in einer Stellungnahme die Vorwürfe als falsch zurück und kündigte an, alle "angeblichen Fehler" demnächst zu widerlegen."
+
+</div>
+
 <div class="myfooter">
   slides: ![](../webs/osf.png) [osf.io/64mbt](https://osf.io/64mbt/)
 </div>
@@ -160,8 +175,8 @@ my naive assumption: where and how to get best training to become an outstanding
 
 <div class="notes">
 
-__confirmation__: tendency to focus on evidence that is in line with our expectations
-__hindsight__: tendency to see an event as having been predictable only after it occured
+__confirmation__: tendency to focus on evidence that is in line with our expectations  
+__hindsight__: tendency to see an event as having been predictable only after it occured  
 
 </div>
 
@@ -217,6 +232,14 @@ __hindsight__: tendency to see an event as having been predictable only after it
 
 # Open Science (Practices)
 
+<div class="notes">
+
+OS= containerbegriff  
+OS von __quali__ Forschern (theoretisch arbeitenden) ganz andere Merkmale als für __quanti__  
+was sie alle vereint...
+
+</div>
+
 ## What is Open Knowledge?
 
 <div class="container" style="margin-top:10%;">
@@ -256,6 +279,14 @@ Knowledge is open if anyone is free to access, use, modify, and share it - subje
 
 <div class="myfooter">
   slides: ![](../webs/osf.png) [osf.io/64mbt](https://osf.io/64mbt/)
+</div>
+
+<div class="notes">
+
+Heißt übrigens nicht, dass  
+die __gleiche__ Dartellungsform für alle passend ist.  
+-> Frage der Wissenschaftskommunikation
+
 </div>
 
 ## <span style="float:right">Open Science Principles</span>
