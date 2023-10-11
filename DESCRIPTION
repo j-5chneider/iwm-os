@@ -1,19 +1,14 @@
 Type: Compendium
-Package: iwm OS workshop
-Title: What the Package Does (One Line, Title Case)
+Package: IWM Open Science
+Title: Providing Materials of Open Science Workshop
 Version: 0.0.1
 Authors@R: 
-  person(given = "Juergen",
-         family = "Schneider",
-         role = c("aut", "cre"),
-         email = "juergen.schneider@uni-tuebingen.de",
-         comment = c(ORCID = "0000-0002-3772-4198"))
-Description: files of workshop
-License: CC-BY 4.0
+    person("Jürgen", "Schneider", , "j.schn@posteo.de", role = c("aut", "cre"))
+Description: Compedium of Open Science Workshop
+License: CC-BY-SA 4.0
 Depends: 
     base,
     codebook,
-    devtools,
     dplyr,
     flexdashboard,
     foreign,
@@ -32,7 +27,6 @@ Depends:
     tidyr,
     tidyverse
 Remotes: 
-    ropensci/osfr,
-    rubenarslan/formr
+    ropensci/osfr
 Encoding: UTF-8
 LazyData: true
